@@ -1,0 +1,21 @@
+
+<ng-container *ngIf="adresses.length >0" >
+<input type="text" (input)="onInput($event)"> <br><br>
+
+<table style="border: 2px solid black ;">
+    <tr>
+        <th>Ville</th>
+        <th>quartier</th>
+        <th>Numero Villa</th>
+
+    </tr>
+    <tr *ngFor="let adresse of adresses">
+        <td style="border: 2px solid black ;">{{adresse.ville}}</td>
+        <td style="border: 2px solid black ;" >{{adresse.quartier}}</td>
+        <td style="border: 2px solid black ;" [innerText]="adresse.nbrVilla"></td>
+    </tr>
+</table>
+</ng-container>
+<ng-container  *ngIf="adresses.length==0" >
+    Le tableau est vide !
+</ng-container>
